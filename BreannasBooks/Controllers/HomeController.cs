@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace BreannasBooks.Controllers
 {
@@ -13,23 +15,17 @@ namespace BreannasBooks.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Books()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            var books = BookConstants.BooksJson;
+            return JsonObject(books);
         }
 
-        public IActionResult Contact()
+        private ContentResult JsonObject(string jsonString)
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
+            var parsedJson = JsonConvert.DeserializeObject(jsonString);
+            var formattedJson = JsonConvert.SerializeObject(parsedJson, Formatting.Indented);
+            return Content(formattedJson, "application/json");
         }
     }
 }
