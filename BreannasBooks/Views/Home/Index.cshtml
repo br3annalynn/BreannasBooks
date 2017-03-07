@@ -2,17 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Cover</th>
-        <th>Title</th>
-        <th>Author</th>
-    </tr>
-    </thead>
-    <tbody id="table-body">
-    </tbody>
-</table>
+<header class="header">
+    <div></div>
+</header>
+<section class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h4>Welcome to Breanna's Books. Click a book cover to see more info.</h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Cover</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
 
 @section Scripts{
     <script type="text/javascript">
@@ -30,11 +40,10 @@
                         var link = "//openlibrary.org" + books[i]["full_url"];
                         $('#table-body').append('<tr><td><a target="_new" href="' + link + '"><img src="' + picture + '"/></td><td>' + title + '</td><td>' + author + '</td></tr>');
                     }
-                    console.log(data);
-
                 },
                 error: function (request, status, error) {
                     console.log(error);
+                    $('#table-body').append('<tr>There was an error loading the data. Please try reloading the page. Error: '+ error +'</tr>');
                 }
             });
         });
