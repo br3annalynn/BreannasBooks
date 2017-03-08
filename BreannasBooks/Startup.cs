@@ -58,8 +58,6 @@ namespace BreannasBooks
 
             app.UseStaticFiles();
 
-            app.UseIdentity();
-
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
             app.UseMvc(routes =>
