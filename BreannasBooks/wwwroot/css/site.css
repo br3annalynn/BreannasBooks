@@ -1,15 +1,19 @@
 ﻿body {
-    padding-bottom: 20px;
     text-align: center;
     color: #683b10;
 }
 
-section {
-    margin-top: 50px;
-}
-
-h4 {
-    color: #683b10;
+header {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    text-align: center;
+    background-image: url("/images/books2.png");
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 img {
@@ -23,28 +27,28 @@ footer {
     padding: 20px 40px;
 }
 
+section {
+    margin-top: 50px;
+}
+
 th {
     text-align: center;
 }
 
-.header {
-    position: relative;
-    width: 100%;
-    min-height: 500px;
-    text-align: center;
-    background-image: url("/images/books.png");
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    border-bottom: 2px solid #545454;
+/*start classes*/
+
+.heading {
+    color: #683b10;
 }
 
 .table {
     margin-top: 50px;
 }
 
-.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
     vertical-align: middle;
 }
